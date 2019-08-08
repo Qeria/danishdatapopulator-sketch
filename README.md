@@ -1,10 +1,8 @@
-# plugin.victor.danishdatapopulate
+# Data Populator
 
-Danish name, phone-number, crpnumber generator.
-Need to change the name.json if you want to update the name array.
-Used the new DataSupplier API.
+This plug-in allows you to insert in any selected text layer a random scandinavian origin name, phone number in danish format, CPR and D-nummer and dates in the DD-MM-YY format.
 
-## Usage
+## Install
 
 Install the dependencies
 
