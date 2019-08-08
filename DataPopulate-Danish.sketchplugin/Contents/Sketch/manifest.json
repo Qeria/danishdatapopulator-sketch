@@ -1,0 +1,29 @@
+{
+  "compatibleVersion": 3,
+  "name": "Data Populate",
+  "description": "Danish Name, Phone Number, CPR Number content generators",
+  "homepage": "https://avpinheiro.dribbble.com/",
+  "identifier": "com.sketchapp.alexvpinheiro.danishdatapopulate",
+  "authorEmail": "apinheiro@qeria.com",
+  "author": "Alexandre Vidal Pinheiro",
+  "bundleVersion": 1,
+  "icon": "icon.png",
+  "suppliesData": true,
+  "commands": [
+    {
+      "script": "index.js",
+      "handlers": {
+        "actions": {
+          "Startup": "onStartup",
+          "Shutdown": "onShutdown",
+          "SupplyDanishNames": "onSupplyDanishNames",
+          "SupplyPhoneNumbers": "onSupplyPhoneNumbers",
+          "SupplyCPRnumbers": "onSupplyCPRNumbers"
+        }
+      }
+    }
+  ],
+  "version": "1.0.0",
+  "disableCocoaScriptPreprocessor": true,
+  "appcast": "https://raw.githubusercontent.com/BohemianCoding/plugins.examples.datasupplier/master/.appcast.xml"
+}

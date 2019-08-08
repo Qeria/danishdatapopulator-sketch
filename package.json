@@ -1,0 +1,28 @@
+{
+  "name": "DataPopulate-Danish",
+  "version": "1.0.0",
+  "description": "Example plugin for supplying dynamic data to Sketch",
+  "license": "MIT",
+  "engines": {
+    "sketch": ">=3.0"
+  },
+  "skpm": {
+    "name": "DataPopulate-Danish",
+    "manifest": "src/manifest.json",
+    "main": "DataPopulate-Danish.sketchplugin"
+  },
+  "scripts": {
+    "build": "skpm-build",
+    "watch": "skpm-build --watch",
+    "start": "skpm-build --watch --run",
+    "postinstall": "npm run build && skpm-link"
+  },
+  "devDependencies": {
+    "@skpm/builder": "^0.5.2"
+  },
+  "author": "Sketch",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/BohemianCoding/plugins.examples.datasupplier.git"
+  }
+}
