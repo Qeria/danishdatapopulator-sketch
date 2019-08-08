@@ -1,11 +1,11 @@
 {
   "compatibleVersion": 3,
   "name" : "Data Populate",
-  "description" : "Danish Name, Phone Number, CPR Number content generators",    
-  "homepage" : "https://avpinheiro.dribbble.com/",
-  "identifier" : "com.sketchapp.alexvpinheiro.danishdatapopulate",
-  "authorEmail" : "apinheiro@qeria.com",
-  "author" : "Alexandre Vidal Pinheiro",
+  "description" : "Danish Name, Phone Number, CPR Number generator from JSon file",    
+  "homepage" : "https://developer.sketchapp.com",
+  "identifier" : "com.sketchapp.victor.danishdatapopulate",
+  "authorEmail" : "vicsemenkov@gmail.com",
+  "author" : "Victor Semenkov",
   "bundleVersion": 1,
   "icon": "icon.png",
   "suppliesData": true,
@@ -18,7 +18,9 @@
           "Shutdown": "onShutdown",
           "SupplyDanishNames": "onSupplyDanishNames",
           "SupplyPhoneNumbers": "onSupplyPhoneNumbers",
-          "SupplyCPRnumbers": "onSupplyCPRNumbers"
+          "SupplyCPRnumbers": "onSupplyCPRNumbers",
+          "SupplyDates": "onSupplyDates",
+          "SupplyEmails": "onSupplyEmails"
         }
       }
     }

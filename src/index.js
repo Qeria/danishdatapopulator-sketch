@@ -1,12 +1,16 @@
 const sketch = require('sketch')
 const { DataSupplier } = sketch
 const util = require('util')
-const theData = require('./name.json')
+const namedata = require('./name.json')
+const emaildata = require('./email.json')
 
 export function onStartup () {
   DataSupplier.registerDataSupplier('public.text', 'Danish Names', 'SupplyDanishNames');
   DataSupplier.registerDataSupplier('public.text', 'Phone Numbers', 'SupplyPhoneNumbers');
   DataSupplier.registerDataSupplier('public.text', 'CPR numbers', 'SupplyCPRnumbers');
+  DataSupplier.registerDataSupplier('public.text', 'Dates', 'SupplyDates');
+  DataSupplier.registerDataSupplier('public.text', 'Emails', 'SupplyEmails');
+
 }
 
 export function onShutdown () {
@@ -16,15 +20,10 @@ export function onShutdown () {
 export function onSupplyDanishNames (context) {
   var dataKey = context.data.key;
   var dataCount = context.data.requestedCount;
-  
-  // var theData = ['Lucy', 'Johnnie', 'Petie', 'Jamie', 'Tina', 'Gillie', 'Tania', 'Peta', 'Rudolpho', 'Jellie', 'Ricki', 'Lori', 'Jorgi', 'Marki'];
-  // var data = NSData.dataWithContentsOfURL('./name.json');
-  // var theData = NSJSONSerialization.JSONObjectWithData_options_error(data, 0, nil);
-		
-  var dynamicData = theData.slice(Math.floor(Math.random() * theData.length));
-  dynamicData.push.apply(dynamicData, theData);
+  var dynamicData = namedata.slice(Math.floor(Math.random() * namedata.length));
+  dynamicData.push.apply(dynamicData, namedata);
   while (dynamicData.length < dataCount) {
-    dynamicData.push.apply(dynamicData, theData);
+    dynamicData.push.apply(dynamicData, namedata);
   }
 
   shuffle(dynamicData);
@@ -33,8 +32,25 @@ export function onSupplyDanishNames (context) {
   while (dataIndex < dataCount) {
     DataSupplier.supplyDataAtIndex(dataKey, dynamicData[dataIndex], dataIndex);
     dataIndex++;  
-  } 
-  // DataSupplier.supplyData(dataKey, dynamicData);  
+  }
+}
+
+export function onSupplyEmails (context) {
+  var dataKey = context.data.key;
+  var dataCount = context.data.requestedCount;
+  var dynamicData = emaildata.slice(Math.floor(Math.random() * emaildata.length));
+  dynamicData.push.apply(dynamicData, emaildata);
+  while (dynamicData.length < dataCount) {
+    dynamicData.push.apply(dynamicData, emaildata);
+  }
+
+  shuffle(dynamicData);
+  dynamicData = dynamicData.slice(0, dataCount);
+  var dataIndex = 0;
+  while (dataIndex < dataCount) {
+    DataSupplier.supplyDataAtIndex(dataKey, dynamicData[dataIndex], dataIndex);
+    dataIndex++;  
+  }
 }
 
 export function onSupplyPhoneNumbers (context) {
@@ -62,6 +78,29 @@ export function onSupplyCPRNumbers (context) {
     var randomCPR = getRandomCPR(new Date(1900, 0, 1), new Date());
 		
     DataSupplier.supplyDataAtIndex(dataKey, randomCPR, dataIndex);
+    dataIndex++;  
+  } 
+  // DataSupplier.supplyData(dataKey, dynamicData);  
+}
+
+export function onSupplyDates (context) {
+  var dataKey = context.data.key;
+  var dataCount = context.data.requestedCount;
+  var dataIndex = 0;
+  var randomDate_ = getRandomDates(new Date(1950, 0, 1), new Date());
+  while (dataIndex < dataCount) {
+    var randomDate = new Date(randomDate_.getTime() + Math.random() * 864000000);
+    var dd = randomDate.getDate();
+    var mm = randomDate.getMonth() + 1; //January is 0!
+    var yyyy = randomDate.getFullYear();
+    if (dd < 10) {
+      dd = '0' + dd;
+    }
+    if (mm < 10) {
+      mm = '0' + mm;
+    }
+    randomDate = dd +'-' + mm +'-'+ yyyy;
+    DataSupplier.supplyDataAtIndex(dataKey, randomDate, dataIndex);
     dataIndex++;  
   } 
   // DataSupplier.supplyData(dataKey, dynamicData);  
@@ -116,4 +155,9 @@ var getRandomCPR = function(start, end) {
 		cprRandomNumber = cprRandomNumber + parseInt(Math.random()*10);
 	}
 	return cprDateHeader + "-" + cprRandomNumber;
+}
+
+var getRandomDates = function(start,end) {
+  var randomDate_ = new Date(start.getTime() + Math.random() * (end.getTime() - start.getTime()));
+  return randomDate_;
 }

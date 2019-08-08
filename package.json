@@ -20,9 +20,9 @@
   "devDependencies": {
     "@skpm/builder": "^0.5.2"
   },
-  "author": "Sketch",
+  "author": "Victor",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/BohemianCoding/plugins.examples.datasupplier.git"
+    "url": "git+https://github.com/Jupiter910802/DanishDataPopulatePlugin.git"
   }
 }
