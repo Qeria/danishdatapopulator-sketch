@@ -4,26 +4,26 @@ This plug-in allows you to insert in any selected text layer a random scandinavi
 
 ## Install
 
-Install the dependencies
+ - [Download the latest release](https://github.com/Qeria/datapopulator-sketchreleases/latest/download/DataPopulate-Danish.sketchplugin.zip)
+ - Unzip the file.
+ - Double-click in the file DataPopulate-Danish.sketchplugin to install. 
 
-```bash
-npm install
-```
+## How it works
 
-Once the installation is done, you can run some commands inside the project folder:
+1. Select a one or multiple layers of text in Sketch. 
+2. Go to Data > Data Populate 
+3. Select in the list of options the one that fits your needs:
+- CPR Numbers, insert random numbers based on the danish *Personal Identification number*, with the format DDMMYY-#### 
+ - Danish Names, inserts random names with danish origin.
+ - Dates, inserts random dates in the format DD-MM-YYYY
+ - E-mails, inserts random e-mails.
+ - Phone numbers, inserts random generated phone numbers with the format +45 #### #####.
 
-```bash
-npm run build
-```
+![Data Populator Gif Video](https://raw.githubusercontent.com/Qeria/datapopulator-sketch/master/assets/data-demo.gif)
 
-To watch for changes:
 
-```bash
-npm run watch
-```
+## Issues and Feature Requests
+For new features or issues use the [Github Issues](https://github.com/Qeria/datapopulator-sketch/issues/new) to raise the problems you might have.
 
-Additionally, if you wish to run the plugin every time it is built:
-
-```bash
-npm run start
-```
+## Special Thanks
+A special digital hug to [Marcelo Zagal](http://www.zagal.dk/) for all the support and ideas for the development of this plug-in.
