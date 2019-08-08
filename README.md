@@ -4,7 +4,7 @@ This plug-in allows you to insert in any selected text layer a random scandinavi
 
 ## Install
 
- - [Download the latest release](https://github.com/Qeria/datapopulator-sketchreleases/latest/download/DataPopulate-Danish.sketchplugin.zip)
+ - [Download the latest release](https://github.com/Qeria/datapopulator-sketch/releases/latest/download/DataPopulate-Danish.sketchplugin.zip)
  - Unzip the file.
  - Double-click in the file DataPopulate-Danish.sketchplugin to install. 
 
@@ -19,7 +19,7 @@ This plug-in allows you to insert in any selected text layer a random scandinavi
  - E-mails, inserts random e-mails.
  - Phone numbers, inserts random generated phone numbers with the format +45 #### #####.
 
-![Data Populator Gif Video](https://raw.githubusercontent.com/Qeria/datapopulator-sketch/master/assets/data-demo.gif)
+![enter image description here](https://raw.githubusercontent.com/Qeria/datapopulator-sketch/master/assets/data-demo.gif)
 
 
 ## Issues and Feature Requests
@@ -27,3 +27,4 @@ For new features or issues use the [Github Issues](https://github.com/Qeria/data
 
 ## Special Thanks
 A special digital hug to [Marcelo Zagal](http://www.zagal.dk/) for all the support and ideas for the development of this plug-in.
+
