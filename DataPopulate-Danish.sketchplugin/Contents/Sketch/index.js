@@ -91,11 +91,58 @@ var exports =
 /************************************************************************/
 /******/ ({
 
+/***/ "./src/email.json":
+/*!************************!*\
+  !*** ./src/email.json ***!
+  \************************/
+/*! exports provided: 0, 1, default */
+/***/ (function(module) {
+
+module.exports = ["anjagraversen@gmail.com",
+				  "gunsorern@yahoo.com",
+				  "amvid@gmail.com",
+				  "markussen@yahoo.com",
+				  "mortensen@gmail.com",
+				  "laursen@mail.dk",
+				  "hedegaard@mail.dk",
+				  "krog@yahoo.com",
+				  "berthelsen@yahoo.com",
+				  "hald@yahoo.com",
+				  "nge1983@yahoo.com",
+				  "pedersen@yahoo.com",
+				  "nissen@yahoo.com",
+				  "filip.nilsen@yahoo.com",
+				  "erichsen@yahoo.com",
+				  "danielsen@yahoo.com",
+				  "knudsen@yahoo.com",
+				  "skaarup@yahoo.com",
+				  "ste.sommer@yahoo.com",
+				  "skaarup@yahoo.com",
+				  "ladefoged@yahoo.com",
+				  "j.skov@one.dk",
+				  "lauritsen@yahoo.com",
+				  "schmidt@yahoo.com",
+				  "johansen@yahoo.com",
+				  "hoffmann@yahoo.com",
+				  "isaksen@yahoo.com",
+				  "gunsorern@yahoo.com",
+				  "gunsorern@yahoo.com",
+				  "gunsorern@yahoo.com",
+				  "gunsorern@yahoo.com",
+				  "gunsorern@yahoo.com",
+				  "gunsorern@yahoo.com",
+				  "gunsorern@yahoo.com",
+				  "gunsorern@yahoo.com",
+				  "gunsorern@yahoo.com"
+				 ];
+
+/***/ }),
+
 /***/ "./src/index.js":
 /*!**********************!*\
   !*** ./src/index.js ***!
   \**********************/
-/*! exports provided: onStartup, onShutdown, onSupplyDanishNames, onSupplyPhoneNumbers, onSupplyCPRNumbers */
+/*! exports provided: onStartup, onShutdown, onSupplyDanishNames, onSupplyEmails, onSupplyPhoneNumbers, onSupplyCPRNumbers, onSupplyDates */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -103,35 +150,38 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "onStartup", function() { return onStartup; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "onShutdown", function() { return onShutdown; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "onSupplyDanishNames", function() { return onSupplyDanishNames; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "onSupplyEmails", function() { return onSupplyEmails; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "onSupplyPhoneNumbers", function() { return onSupplyPhoneNumbers; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "onSupplyCPRNumbers", function() { return onSupplyCPRNumbers; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "onSupplyDates", function() { return onSupplyDates; });
 var sketch = __webpack_require__(/*! sketch */ "sketch");
 
 var DataSupplier = sketch.DataSupplier;
 
 var util = __webpack_require__(/*! util */ "util");
 
-var theData = __webpack_require__(/*! ./name.json */ "./src/name.json");
+var namedata = __webpack_require__(/*! ./name.json */ "./src/name.json");
+
+var emaildata = __webpack_require__(/*! ./email.json */ "./src/email.json");
 
 function onStartup() {
   DataSupplier.registerDataSupplier('public.text', 'Danish Names', 'SupplyDanishNames');
   DataSupplier.registerDataSupplier('public.text', 'Phone Numbers', 'SupplyPhoneNumbers');
-  DataSupplier.registerDataSupplier('public.text', 'CPR numbers', 'SupplyCPRnumbers');
+  DataSupplier.registerDataSupplier('public.text', 'CPR Numbers', 'SupplyCPRnumbers');
+  DataSupplier.registerDataSupplier('public.text', 'Dates', 'SupplyDates');
+  DataSupplier.registerDataSupplier('public.text', 'Emails', 'SupplyEmails');
 }
 function onShutdown() {
   DataSupplier.deregisterDataSuppliers();
 }
 function onSupplyDanishNames(context) {
   var dataKey = context.data.key;
-  var dataCount = context.data.requestedCount; // var theData = ['Lucy', 'Johnnie', 'Petie', 'Jamie', 'Tina', 'Gillie', 'Tania', 'Peta', 'Rudolpho', 'Jellie', 'Ricki', 'Lori', 'Jorgi', 'Marki'];
-  // var data = NSData.dataWithContentsOfURL('./name.json');
-  // var theData = NSJSONSerialization.JSONObjectWithData_options_error(data, 0, nil);
-
-  var dynamicData = theData.slice(Math.floor(Math.random() * theData.length));
-  dynamicData.push.apply(dynamicData, theData);
+  var dataCount = context.data.requestedCount;
+  var dynamicData = namedata.slice(Math.floor(Math.random() * namedata.length));
+  dynamicData.push.apply(dynamicData, namedata);
 
   while (dynamicData.length < dataCount) {
-    dynamicData.push.apply(dynamicData, theData);
+    dynamicData.push.apply(dynamicData, namedata);
   }
 
   shuffle(dynamicData);
@@ -141,8 +191,26 @@ function onSupplyDanishNames(context) {
   while (dataIndex < dataCount) {
     DataSupplier.supplyDataAtIndex(dataKey, dynamicData[dataIndex], dataIndex);
     dataIndex++;
-  } // DataSupplier.supplyData(dataKey, dynamicData);  
+  }
+}
+function onSupplyEmails(context) {
+  var dataKey = context.data.key;
+  var dataCount = context.data.requestedCount;
+  var dynamicData = emaildata.slice(Math.floor(Math.random() * emaildata.length));
+  dynamicData.push.apply(dynamicData, emaildata);
 
+  while (dynamicData.length < dataCount) {
+    dynamicData.push.apply(dynamicData, emaildata);
+  }
+
+  shuffle(dynamicData);
+  dynamicData = dynamicData.slice(0, dataCount);
+  var dataIndex = 0;
+
+  while (dataIndex < dataCount) {
+    DataSupplier.supplyDataAtIndex(dataKey, dynamicData[dataIndex], dataIndex);
+    dataIndex++;
+  }
 }
 function onSupplyPhoneNumbers(context) {
   var dataKey = context.data.key;
@@ -170,6 +238,33 @@ function onSupplyCPRNumbers(context) {
   while (dataIndex < dataCount) {
     var randomCPR = getRandomCPR(new Date(1900, 0, 1), new Date());
     DataSupplier.supplyDataAtIndex(dataKey, randomCPR, dataIndex);
+    dataIndex++;
+  } // DataSupplier.supplyData(dataKey, dynamicData);  
+
+}
+function onSupplyDates(context) {
+  var dataKey = context.data.key;
+  var dataCount = context.data.requestedCount;
+  var dataIndex = 0;
+  var randomDate_ = getRandomDates(new Date(1950, 0, 1), new Date());
+
+  while (dataIndex < dataCount) {
+    var randomDate = new Date(randomDate_.getTime() + Math.random() * 864000000);
+    var dd = randomDate.getDate();
+    var mm = randomDate.getMonth() + 1; //January is 0!
+
+    var yyyy = randomDate.getFullYear();
+
+    if (dd < 10) {
+      dd = '0' + dd;
+    }
+
+    if (mm < 10) {
+      mm = '0' + mm;
+    }
+
+    randomDate = dd + '-' + mm + '-' + yyyy;
+    DataSupplier.supplyDataAtIndex(dataKey, randomDate, dataIndex);
     dataIndex++;
   } // DataSupplier.supplyData(dataKey, dynamicData);  
 
@@ -230,6 +325,11 @@ var getRandomCPR = function getRandomCPR(start, end) {
   return cprDateHeader + "-" + cprRandomNumber;
 };
 
+var getRandomDates = function getRandomDates(start, end) {
+  var randomDate_ = new Date(start.getTime() + Math.random() * (end.getTime() - start.getTime()));
+  return randomDate_;
+};
+
 /***/ }),
 
 /***/ "./src/name.json":
@@ -277,6 +377,8 @@ that['onShutdown'] = __skpm_run.bind(this, 'onShutdown');
 that['onSupplyDanishNames'] = __skpm_run.bind(this, 'onSupplyDanishNames');
 that['onSupplyPhoneNumbers'] = __skpm_run.bind(this, 'onSupplyPhoneNumbers');
 that['onSupplyCPRNumbers'] = __skpm_run.bind(this, 'onSupplyCPRNumbers');
+that['onSupplyDates'] = __skpm_run.bind(this, 'onSupplyDates');
+that['onSupplyEmails'] = __skpm_run.bind(this, 'onSupplyEmails');
 that['onRun'] = __skpm_run.bind(this, 'default')
 
 //# sourceMappingURL=index.js.map
