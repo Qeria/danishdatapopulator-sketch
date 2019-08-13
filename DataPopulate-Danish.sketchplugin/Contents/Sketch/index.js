@@ -98,43 +98,7 @@ var exports =
 /*! exports provided: 0, 1, default */
 /***/ (function(module) {
 
-module.exports = ["anjagraversen@gmail.com",
-				  "gunsorern@yahoo.com",
-				  "amvid@gmail.com",
-				  "markussen@yahoo.com",
-				  "mortensen@gmail.com",
-				  "laursen@mail.dk",
-				  "hedegaard@mail.dk",
-				  "krog@yahoo.com",
-				  "berthelsen@yahoo.com",
-				  "hald@yahoo.com",
-				  "nge1983@yahoo.com",
-				  "pedersen@yahoo.com",
-				  "nissen@yahoo.com",
-				  "filip.nilsen@yahoo.com",
-				  "erichsen@yahoo.com",
-				  "danielsen@yahoo.com",
-				  "knudsen@yahoo.com",
-				  "skaarup@yahoo.com",
-				  "ste.sommer@yahoo.com",
-				  "skaarup@yahoo.com",
-				  "ladefoged@yahoo.com",
-				  "j.skov@one.dk",
-				  "lauritsen@yahoo.com",
-				  "schmidt@yahoo.com",
-				  "johansen@yahoo.com",
-				  "hoffmann@yahoo.com",
-				  "isaksen@yahoo.com",
-				  "gunsorern@yahoo.com",
-				  "gunsorern@yahoo.com",
-				  "gunsorern@yahoo.com",
-				  "gunsorern@yahoo.com",
-				  "gunsorern@yahoo.com",
-				  "gunsorern@yahoo.com",
-				  "gunsorern@yahoo.com",
-				  "gunsorern@yahoo.com",
-				  "gunsorern@yahoo.com"
-				 ];
+module.exports = ["anjagraversen@gmail.com","gunsorern@yahoo.com","amvid@gmail.com","markussen@mail.dk","mortensen@gmail.com","laursen@mail.dk","hedegaard@mail.dk","krog@ym.com","berthelsen@yahoo.com","hald@krog.dk","nge1983@one.com","pedersen@seng.dk","nissen@yahoo.com","filip.nilsen@yousee.dk","erichsen@microsoft.com","danielsen@msn.com","knudsen@notsdk.com","skaarup@krogen.dk","ste.sommer@yahoo.com","skaarup@medmad.dk","ladefoged@expressen.se","j.skov@krak.dk","lauritsen@gmail.com","schmidt@qomo.dk","johansen@gmail.com","hoffmann@buckholm.com","isaksen@blocket.se","rmorten@one.co.uk","mattn@hitta.se","franklinmatt@hemnet.se","erik.malin@aftonbladet.se","morten.rick@eniro.se","h.hristiensen@dr.dk","gunsorern@yousee.dk","martin.schummer@yahoo.com","eddardstark@yousee.dk","rbaratheon@kongen.dk","jlannister@politiken.dk","catelyns@dba.dk","cersei.lannister@berlingske.dk","d.targaryen@one.dk","jorah.mormont@fastlight.dk","vtargaryen@got.dk","sansastark@sport.tv2.dk","arya.stark@jobnet.dk","t.greyjoy@medielogin.dk","sandor.clegane@nemlogin.dk","tyrion.lan@yousee.dk"];
 
 /***/ }),
 
