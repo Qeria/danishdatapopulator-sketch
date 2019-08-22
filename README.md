@@ -19,7 +19,7 @@ This plug-in allows you to insert in any selected text layer a random scandinavi
  - E-mails, inserts random e-mails.
  - Phone numbers, inserts random generated phone numbers with the format +45 #### #####.
 
-![enter image description here](https://raw.githubusercontent.com/Qeria/datapopulator-sketch/master/assets/data-demo.gif)
+![Data Populate in a Gif Animation](https://raw.githubusercontent.com/Qeria/datapopulator-sketch/master/assets/data-demo.gif)
 
 
 ## Issues and Feature Requests
