@@ -19,6 +19,7 @@
   },
   "devDependencies": {
     "@skpm/builder": "^0.5.2"
+    "serialize-javascript": ">=2.1.1"
   },
   "author": "Alexandre Vidal Pinheiro",
   "repository": {
